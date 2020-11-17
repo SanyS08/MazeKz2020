@@ -543,5 +543,13 @@ namespace WebMaze.Controllers
 
             return View(buildings.OrderByDescending(building => building.Height).ToList());
         }
+
+        public IActionResult Grasmik()
+        {
+            var ViewModel = new GrasmikMazeModel();
+            ViewModel.MainMaze=ViewModel.mazeGenerator.GenerateRandomMaze(5,5);
+            
+            return View();
+        }
     }
 }
